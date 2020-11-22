@@ -1,0 +1,63 @@
+.FormTodoItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--size_l_double);
+    
+    & .containerField {
+        margin-bottom: 15px;
+
+        padding: var(--extra_small_padding);
+        padding-bottom: var(--big_padding);
+
+        border: 1px solid var(--light_color);
+        border-radius: 5px;
+        outline: none;
+
+        &.active {
+            border: 1px solid var(--contrast_color);
+        }
+        
+        & .field {
+            position: relative;
+
+            word-break: break-all;
+
+            max-height: 250px;
+            overflow: auto;
+
+            outline: none;
+    
+            padding: 0 var(--small_padding);
+    
+            background-color: transparent;
+            color: var(--font_main_color);
+        }
+    }
+
+    & .containerBtn {
+        & .btn {
+            padding: var(--extra_small_padding) var(--small_padding);
+            padding-bottom: calc(var(--extra_small_padding) + 2px);
+
+            background-color: transparent;
+            color: var(--font_main_color);
+            border: none;
+
+            font-size: var(--middle_font_size);
+        }
+
+        & .send {
+            background-color: var(--success_color);
+            border-radius: 5px;
+
+            color: var(--font_contrast_color);
+            font-weight: 700;
+        }
+    
+        & .cancel {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    } 
+}

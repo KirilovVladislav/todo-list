@@ -1,0 +1,14 @@
+.Inbox {
+    & .headerContainer {
+        display: flex;
+        justify-content: space-between;
+
+        & .title {
+            margin-bottom: var(--middle_padding);
+    
+            color: var(--font_main_color);
+            font-size: var(--big_font_size);
+            font-weight: 700;
+        }
+    }
+}

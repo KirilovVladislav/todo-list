@@ -1,0 +1,38 @@
+.Navbar {   
+    width: 300px;
+    padding: var(--middle_padding);
+
+    background-color: var(--theme_color);
+
+    & .list {
+        list-style: none;
+        padding: 0;
+
+        & .item {
+            
+            & .link {
+                display: block;
+                padding: var(--extra_small_padding);
+                padding-left: var(--middle_padding);
+                
+                color: var(--font_main_color);
+                font-size: var(--middle_font_size);
+                text-decoration: none;
+                
+                &:hover,
+                &:focus {
+                    background-color: var(--main_color);
+                    outline: none;
+                }
+                
+                &.active {
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                    
+                    background-color: var(--main_color);
+                    outline: none;
+                }
+            }
+        }
+    }
+}
