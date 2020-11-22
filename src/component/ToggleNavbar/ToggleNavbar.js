@@ -4,9 +4,9 @@ import { compose } from 'redux'
 import styles from './ToggleNavbar.module.scss'
 
 
-const ToggleNavbar = ({isActiveNavbar, toggle, ...props}) => {
+const ToggleNavbar = ({ isActiveNavbar, toggle, ...props }) => {
     return (
-        <button 
+        <button
             className={`
                 ${styles.ToggleNavbar}
                 ${isActiveNavbar ? styles.active : ``}

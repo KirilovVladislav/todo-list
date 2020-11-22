@@ -1,37 +1,45 @@
 .ToggleNavbar {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  position: relative;
 
-    
+  outline: none;
+
+  &:hover,
+  &:focus {
     &::before,
     &::after {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        left: 0;
-        background-color: var(--contrast_color);
-        transition: transform 100ms linear;
+      background-color: var(--danger_color);
     }
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 0;
+    background-color: var(--contrast_color);
+    transition: transform 100ms linear;
+  }
 
+  &::before {
+    transform: translateY(7px);
+  }
+
+  &::after {
+    transform: translateY(-7px);
+  }
+
+  &.active {
     &::before {
-        transform: translateY(7px)
+      transform: rotate(45deg);
     }
 
     &::after {
-        transform: translateY(-7px)
+      transform: rotate(-45deg);
     }
-
-    &.active {
-        &::before {
-            transform: rotate(45deg) ;
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-        }
-    }
+  }
 }

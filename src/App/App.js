@@ -18,7 +18,7 @@ import styles from './App.module.scss'
 
 const App = ({ ...props }) => {
 	const [isDarkTheme, setIsDarkTheme] = useState(false)
-	const [isActiveNavbar, setIsActiveNavbar] = useState(true)
+	const [isActiveNavbar, setIsActiveNavbar] = useState(false)
 
 	const dispatch = useDispatch()
 
@@ -31,10 +31,10 @@ const App = ({ ...props }) => {
 
 
 	const Handle = {
-        toggle: (callback) => {
-            callback((prev) => !prev)
-        }
-    }
+		toggle: (callback) => {
+			callback((prev) => !prev)
+		}
+	}
 
 
 	return (
@@ -43,16 +43,16 @@ const App = ({ ...props }) => {
 			: <div className={`${isDarkTheme ? `darkTheme` : ``} ${styles.App}`}>
 				<header className={`${styles.header}`}>
 					<h1 className={`visually-hidden`}>Todo list</h1>
-					<ToggleNavbar 
+					<ToggleNavbar
 						isActiveNavbar={isActiveNavbar}
 						toggle={() => Handle.toggle(setIsActiveNavbar)}
 					/>
-					<ToggleTheme 
-						isDarkTheme={isDarkTheme} 
-						toggle={() => Handle.toggle(setIsDarkTheme)} 
+					<ToggleTheme
+						isDarkTheme={isDarkTheme}
+						toggle={() => Handle.toggle(setIsDarkTheme)}
 					/>
 				</header>
-				{isActiveNavbar && <Navbar className={styles.nav}/>}
+				{isActiveNavbar && <Navbar className={styles.nav} />}
 				<main className={`${styles.main}`}>
 					<div className={`${styles.mainContainer}`}>
 						<Switch>
